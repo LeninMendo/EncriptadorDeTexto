@@ -1,0 +1,320 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+header {
+	position:absolute;
+	left: -30px;
+}
+
+header ul li {
+	list-style: none;
+}
+
+ul li a {
+	display: flex;
+	padding: 0 0 30px;
+	position: relative;
+    transition: 1s all;
+}
+
+header ul li ul {
+	display: none;
+}
+
+/* PROPIEDADES ESPECIFICAS */
+
+header ul li.nivel1 { 
+	margin-right: auto;
+	float:left;
+}
+
+header ul li a.nivel1, header ul li a.nivel2 {
+	display: block;
+	position: relative;
+	text-align:left;
+}
+
+/*Estilo del boton cuando se pasa el mouse por encima*/
+
+header ul li a:hover, header ul li:hover a.nivel1 {
+    transform: scale(1.2);
+	position: relative;
+}
+
+header ul li:hover  ul.nivel2, header ul li a:hover  ul.nivel2{
+	display: block;
+	position: absolute;
+    left: 22px;
+	padding-left: 0px;
+}
+
+/* Contenedor */
+
+.contenedor {
+	margin: 0 0 0 50px;
+	width: 100% auto;
+	height: calc(100vh - 100px);
+	display:flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+/* Lado izquierdo */
+.entrada {
+    width: 60%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Entrada de texto - izquierdo */
+
+.texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.texto textarea {
+	border-radius: 30px;
+	border:none;
+ background: white;
+ -webkit-box-shadow: rgb(74 74 196 / 25%) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+         box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -20px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+	outline: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    line-height: 1.5;
+    padding: 2em;
+}
+
+.texto textarea::placeholder {
+    color: #072b61;
+}
+
+/* Adventencia minusculas */
+
+.warning {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.warning img {
+    margin: 0 1em;
+}
+
+.pegar button{
+    display: none;
+    margin-left: auto;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    padding: 10px;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#D8D9DB), color-stop(80%, #fff), to(#FDFDFD));
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    color: #052051;
+	cursor: pointer;
+}
+   
+.pegar button:hover {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+          box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+   
+.pegar button:active {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+
+/*  Botones desencriptar */
+
+.botones {
+    height: 18%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: none;
+    gap: 1em;
+}
+
+.botones button:first-child, .botones button:last-child {
+    width: 100%;
+    height: 67px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+	display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    outline: none;
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    color: #052051;
+}
+
+.botones button:first-child:hover, .botones button:last-child:hover {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+.botones button:first-child:active, .botones button:last-child:active {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+.botones button:first-child:focus, .botones button:last-child:focus {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+/* Lado derecho */
+.salida {
+    width: 30%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    border-radius: 35px;
+    background: white;
+    -webkit-box-shadow: rgb(74 74 196 / 25%) 0px 30px 50px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 26px -18px inset;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 50px -20px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+/* Imagen */
+
+.mostrar-imagen, .mostrar-texto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.mostrar-imagen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mostrar-imagen img {
+    width: 100%;
+    margin: 4px;
+}
+
+.mostrar-imagen h2, .mostrar-imagen p {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    font-weight: bold;
+	padding: 0 1em;
+    color: #052051;
+}
+
+/* Texto */
+
+.mostrar-texto {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mostrar-texto textarea {
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+    width: 100%;
+    height: 100%;
+    font-size: 2em;
+    line-height: 1.5;
+    padding: 2em;
+}
+
+/* Copiar */
+
+.boton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 0;
+    width: 100%;
+}
+
+.boton button:first-child {
+    width: 40%;
+    height: 50px;
+    font-size: 1.2em;
+    border-radius: 25px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    outline: none;
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    color: #052051;
+}
+
+.boton button:first-child:hover {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+.boton button:first-child:active {
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+.boton button:first-child:focus{
+    -webkit-box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+        box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 5px 3px #999, inset 0 0 30px #aaa;
+}
+
+footer{
+	padding: 15px 0;
+    text-align: center;
+}
+
+.diseñador{
+    color: #052051;
+    margin: 0 0 10px;
+}
